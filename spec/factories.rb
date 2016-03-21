@@ -4,4 +4,8 @@ FactoryGirl.define do
     email     'test@test.com'
     password  'qwerty'
   end
+
+  factory :question do
+    content "test question"
+  end
 end

@@ -3,9 +3,15 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show]
 
   def index
+    @questions = Question.order(created_at: :desc)
   end
 
   def show
+    if @question.user
+      @user = @question.user
+    else
+      @user = User.new(name: "Deleted User")
+    end
   end
 
   def new

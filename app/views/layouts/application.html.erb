@@ -8,7 +8,7 @@
 </head>
 <body>
 <% if current_user %>
-  <%= current_user.name %>
+  Logged in as: <%= current_user.name %>
   <%= link_to 'Sign Out', signout_sessions_path %>
 <% else %>
   <%= link_to 'Sign Up', signup_users_path %>
