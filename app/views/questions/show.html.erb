@@ -1,6 +1,30 @@
-<%= @question.content %>
-By: <%= @user.name %>
-
-<div>
-  Answer this Question
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h5><%= @question.content %></h5>
+    <br>
+    By: <%= @user.name %>
+    <%= link_to new_question_answer_path(@question) do %>
+      <button class="btn btn-primary pull-right">
+        Answer this Question
+      </button>
+    <% end %>
+  </div>
 </div>
+
+
+<% if @answers.any? %>
+  <h5>Answers:</h5>
+  <div class="panel panel-default">
+    <ul class="list-group">
+      <% @answers.each do |answer| %>
+      <li class="list-group-item"><%= answer.content %> -
+        <% if answer.user %>
+          <%= answer.user.name %>
+        <% else %>
+          Deleted user
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

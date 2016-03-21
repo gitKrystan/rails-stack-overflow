@@ -1,5 +1,9 @@
 <% if @questions.any? %>
-  <%= @questions.each do |question| %>
-    <%= link_to question.content, question %>
-  <% end %>
+  <div class="panel panel-default">
+    <ul class="list-group">
+      <% @questions.each do |question| %>
+        <li class="list-group-item"><%= link_to question.content, question %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>

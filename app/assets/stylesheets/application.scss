@@ -11,5 +11,12 @@
  * file per style scope.
  *
  */
+@import "bootswatch_variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootswatch";
+
+.col-center {
+  margin: auto;
+  float: none;
+}

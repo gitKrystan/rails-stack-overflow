@@ -12,6 +12,8 @@ class QuestionsController < ApplicationController
     else
       @user = User.new(name: "Deleted User")
     end
+
+    @answers = @question.answers
   end
 
   def new

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Question, type: :model do
+RSpec.describe Answer, type: :model do
   it { should belong_to :user }
-  it { should have_many :answers }
+  it { should belong_to :question }
   it { should validate_presence_of :content }
 end

@@ -7,17 +7,51 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-  Logged in as: <%= current_user.name %>
-  <%= link_to 'Sign Out', signout_sessions_path %>
-<% else %>
-  <%= link_to 'Sign Up', signup_users_path %>
-  <%= link_to 'Sign In', signin_sessions_path %>
-<% end %>
-<%= link_to "Ask a Question", new_question_path %>
-<%= flash[:alert] %>
-<%= flash[:notice] %>
-<%= yield %>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'Stack Overflow Redux', root_path, class: 'navbar-brand' %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <p class="navbar-text">
+            <% if current_user %>
+              Signed in as: <%= current_user.name %>
+            <% end %>
+          </p>
+          <% if current_user %>
+            <li><%= link_to 'Sign Out', signout_sessions_path %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up', signup_users_path %></li>
+            <li><%= link_to 'Sign In', signin_sessions_path %></li>
+          <% end %>
+          <li><%= link_to "Ask a Question", new_question_path %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <% if flash[:alert] %>
+      <div class="alert alert-warning" role="alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+  </div>
 
 </body>
 </html>
