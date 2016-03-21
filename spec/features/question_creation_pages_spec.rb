@@ -14,4 +14,11 @@ describe 'the create a question path' do
     click_button "Ask the Internet"
     expect(page).to have_content("test question?")
   end
+
+  it 'shows an error if the question is improperly filled in' do
+    login(create(:user))
+    visit new_question_path
+    click_button "Ask the Internet"
+    expect(page).to have_content("error")
+  end
 end
