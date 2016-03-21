@@ -14,16 +14,45 @@
 
 <% if @answers.any? %>
   <h5>Answers:</h5>
+
+  <% if @best_answer %>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h5>Best Answer!</h5>
+      </div>
+      <div class="panel-body">
+        <%= @best_answer.content %>
+
+        <span class="pull-right">
+          <%= form_for [@question, @best_answer] do |f| %>
+            <%= f.hidden_field :best_answer, value: false %>
+            <%= f.submit "Remove as Best Answer", class: "btn btn-xs btn-default" %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  <% end %>
+
   <div class="panel panel-default">
     <ul class="list-group">
       <% @answers.each do |answer| %>
-      <li class="list-group-item"><%= answer.content %> -
-        <% if answer.user %>
-          <%= answer.user.name %>
-        <% else %>
-          Deleted user
+        <% unless answer == @best_answer %>
+          <li class="list-group-item"><%= answer.content %> -
+            <% if answer.user %>
+            <%= answer.user.name %>
+            <% else %>
+            Deleted user
+            <% end %>
+            <% if @user_is_author %>
+            <span class="pull-right">
+              <%= form_for [@question, answer] do |f| %>
+                <%= f.hidden_field :best_answer, value: true %>
+                <%= f.submit "Mark as Best Answer", class: "btn btn-xs btn-default" %>
+              <% end %>
+            </span>
+            <% end %>
+          </li>
         <% end %>
-      </li>
       <% end %>
     </ul>
   </div>
