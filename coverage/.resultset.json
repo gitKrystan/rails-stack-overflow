@@ -1,13 +1,8 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/stack-overflow/spec/features/user_authentication_pages_spec.rb": [
+      "/Users/Guest/Desktop/stack-overflow/spec/features/question_creation_pages_spec.rb": [
         1,
-        null,
-        1,
-        1,
-        2,
-        null,
         null,
         1,
         1,
@@ -15,6 +10,9 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -62,11 +60,11 @@
         null,
         null,
         1,
-        8,
+        13,
         null,
         null,
         1,
-        8,
+        13,
         null,
         null,
         null,
@@ -289,9 +287,15 @@
         1,
         null,
         1,
-        14,
+        29,
         null,
         1,
+        null,
+        1,
+        2,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/stack-overflow/app/helpers/application_helper.rb": [
@@ -299,6 +303,35 @@
         null
       ],
       "/Users/Guest/Desktop/stack-overflow/app/controllers/questions_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -310,10 +343,10 @@
         null,
         null,
         1,
+        3,
+        3,
         2,
         2,
-        1,
-        1,
         null,
         1,
         1,
@@ -350,7 +383,14 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/stack-overflow/app/models/question.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/stack-overflow/app/models/user.rb": [
+        1,
         1,
         1,
         1,
@@ -444,11 +484,32 @@
       "/Users/Guest/Desktop/stack-overflow/spec/support/users_helper.rb": [
         1,
         1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/stack-overflow/spec/features/user_authentication_pages_spec.rb": [
+        1,
+        null,
+        1,
+        1,
         2,
-        2,
-        2,
-        2,
-        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -475,6 +536,14 @@
         null,
         null
       ],
+      "/Users/Guest/Desktop/stack-overflow/spec/models/question_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/stack-overflow/spec/models/user_spec.rb": [
         1,
         null,
@@ -483,9 +552,10 @@
         2,
         2,
         2,
+        2,
         null
       ]
     },
-    "timestamp": 1458585860
+    "timestamp": 1458593223
   }
 }

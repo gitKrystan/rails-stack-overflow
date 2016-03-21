@@ -14,6 +14,7 @@
   <%= link_to 'Sign Up', signup_users_path %>
   <%= link_to 'Sign In', signin_sessions_path %>
 <% end %>
+<%= link_to "Ask a Question", new_question_path %>
 <%= flash[:alert] %>
 <%= flash[:notice] %>
 <%= yield %>
