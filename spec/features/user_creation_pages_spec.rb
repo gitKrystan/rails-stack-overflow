@@ -12,4 +12,10 @@ describe 'The new user path' do
     click_button 'Complete Sign Up'
     expect(page).to have_content(userAttrs[:name])
   end
+
+  it 'gives an error message when a required field is not filled in' do
+    visit signup_users_path
+    click_button 'Complete Sign Up'
+    expect(page).to have_content('errors')
+  end
 end
