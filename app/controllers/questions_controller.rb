@@ -10,11 +10,11 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    if @question.user
-      @user = @question.user
-    else
-      @user = User.new(name: 'Deleted User')
-    end
+    @user = if @question.user
+              @question.user
+            else
+              User.new(name: 'Deleted User')
+            end
     @best_answer = @question.answers.find_by(best_answer: true)
     @answers = @question.answers.order(created_at: :desc)
   end
