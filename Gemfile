@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
-
 group :development do
   gem 'byebug'
   gem 'web-console'
@@ -29,4 +28,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'letter_opener'
 end
