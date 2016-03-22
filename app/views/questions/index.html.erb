@@ -1,5 +1,17 @@
 <% if @questions.any? %>
   <div class="panel panel-default">
+    <div class="panel-body">
+      <h6>Today's Statistics:</h6>
+      <div class="col-sm-3">
+        <h5><small>Questions:</small> <%= @number_of_questions_today %></h5>
+      </div>
+      <div class="col-sm-3">
+        <h5><small>Answers:</small> <%= @number_of_answers_today %></h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
     <ul class="list-group">
       <% @questions.each do |question| %>
         <li class="list-group-item"><%= link_to question.content, question %></li>

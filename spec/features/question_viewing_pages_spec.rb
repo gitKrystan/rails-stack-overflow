@@ -8,4 +8,11 @@ describe 'the view a question path' do
     expect(page).to have_content(question.content)
     expect(page).to have_content("Answer this Question")
   end
+
+  it 'shows the number of questions and answers for the day on the index' do
+    create :question, :with_two_answers
+    visit root_path
+    expect(page).to have_content('Questions: 1')
+    expect(page).to have_content('Answers: 2')
+  end
 end

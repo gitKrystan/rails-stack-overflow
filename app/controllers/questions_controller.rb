@@ -5,13 +5,15 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.order(created_at: :desc)
+    @number_of_questions_today = Question.count_today
+    @number_of_answers_today = Answer.count_today
   end
 
   def show
     if @question.user
       @user = @question.user
     else
-      @user = User.new(name: "Deleted User")
+      @user = User.new(name: 'Deleted User')
     end
     @best_answer = @question.answers.find_by(best_answer: true)
     @answers = @question.answers.order(created_at: :desc)
