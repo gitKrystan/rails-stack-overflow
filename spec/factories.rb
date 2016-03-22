@@ -6,6 +6,19 @@ FactoryGirl.define do
   end
 
   factory :question do
-    content "test question"
+    sequence :content do |n|
+      "test question #{n}"
+    end
+
+    factory :user_question do
+      user
+    end
+  end
+
+  factory :answer do
+    question
+    sequence :content do |n|
+      "test answer #{n}"
+    end
   end
 end
