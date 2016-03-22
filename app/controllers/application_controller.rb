@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if current_user.nil?
-      redirect_to signin_sessions_url, alert: "Please Log In to Proceed"
+      redirect_to signin_sessions_url, alert: 'Please Log In to Proceed'
     end
   end
 end

@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h4>Admin Portal</h4>
+</div>
+
+<% if @users.any? %>
+  <h5>Manage Users</h5>
+  <p>
+    Pick a user to change account settings.
+  </p>
+  <ul class="nav nav-pills nav-stacked">
+    <% @users.each do |user| %>
+      <li> <%= link_to user.name, edit_admin_user_path(user) %> </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,14 @@
+<h5>Manage User: <%= @user.name %></h5>
+
+<%= render 'layouts/errors', object: @user %>
+
+<%= form_for [:admin, @user] do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :admin, value: !@user.admin? %>
+    <% if @user.admin? %>
+      <%= f.submit 'Remove as Admin', class: 'btn btn-danger' %>
+    <% else %>
+      <%= f.submit 'Make Admin', class: 'btn btn-warning' %>
+    <% end %>
+  </div>
+<% end %>

@@ -7,6 +7,10 @@ FactoryGirl.define do
       "test#{n}@example.com"
     end
     password 'qwerty'
+
+    factory :admin_user do
+      admin true
+    end
   end
 
   factory :question do
