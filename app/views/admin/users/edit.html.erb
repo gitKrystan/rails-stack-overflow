@@ -12,3 +12,9 @@
     <% end %>
   </div>
 <% end %>
+
+<%= link_to admin_user_path(@user),
+    data: {confirm: "Are you sure you want to delete #{@user.name}?",
+           method: 'delete'} do%>
+  <button class="btn btn-danger">Delete User</button>
+<% end %>

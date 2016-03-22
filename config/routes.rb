@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'users#index'
-    resources :users, only: [:index, :edit, :update]
+    resources :users, only: [:index, :edit, :update, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

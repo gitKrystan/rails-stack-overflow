@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.order(:name)
@@ -13,6 +13,12 @@ class Admin::UsersController < AdminController
       flash[:notice] = 'User settings have been updated.'
     end
     render 'edit'
+  end
+
+  def destroy
+    @user.destroy
+    flash[:notice] = 'User has been deleted.'
+    redirect_to admin_root_path
   end
 
   private

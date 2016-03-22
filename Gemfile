@@ -29,4 +29,5 @@ group :test do
   gem 'capybara'
   gem 'simplecov', require: false
   gem 'letter_opener'
+  gem 'selenium-webdriver'
 end
