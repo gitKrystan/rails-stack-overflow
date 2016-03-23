@@ -25,9 +25,6 @@ describe 'the add an admin user path' do
 
   it 'allows an admin to delete a user', js: true do
     click_button 'Delete User'
-    # accept_confirm do
-    #   click_on 'ok'
-    # end
     page.driver.browser.switch_to.alert.accept
     expect(page).to have_content('User has been deleted.')
   end

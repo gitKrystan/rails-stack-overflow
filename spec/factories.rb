@@ -35,9 +35,10 @@ FactoryGirl.define do
     end
   end
 
-  trait :with_two_questions_that_have_answers do
+  trait :with_a_question_and_an_answer do
     after :create do |user|
-      create_list :question, 2, :with_two_answers, user: user
+      create :question, user: user
+      create :answer, user: user
     end
   end
 end

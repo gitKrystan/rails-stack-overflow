@@ -21,6 +21,7 @@ group :test, :development do
   gem 'launchy'
   gem 'pry'
   gem 'database_cleaner'
+  gem 'letter_opener'
 end
 
 group :test do
@@ -28,6 +29,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'simplecov', require: false
-  gem 'letter_opener'
   gem 'selenium-webdriver'
 end
