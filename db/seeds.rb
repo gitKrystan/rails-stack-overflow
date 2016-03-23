@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(name: 'Anonymous',
+            email: 'anonymous@example.com',
+            password: 'test')
+# TODO: set secret password and gitignore this file

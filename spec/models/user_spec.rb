@@ -18,8 +18,10 @@ RSpec.describe User, type: :model do
     user = create(:user, :with_a_question_and_an_answer)
     questions = Array.new(user.questions)
     answers = Array.new(user.answers)
+    anonymous_user = User.create(name: 'Anonymous',
+                                 email: 'anonymous@example.com',
+                                 password: 'test')
     user.destroy
-    anonymous_user = User.find_by name: 'Anonymous'
     expect(user.questions).to eq []
     expect(user.answers).to eq []
     expect(anonymous_user.questions).to eq questions
